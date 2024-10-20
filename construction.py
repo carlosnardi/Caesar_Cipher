@@ -30,8 +30,8 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 def caesar(direction, text, shift):
   output_text = ""
   for letter in text:
-    if letter == " ":
-      new_text += " "
+    if letter not in alphabet:
+      output_text += letter
     else:
       letter = alphabet.index(letter)
       if direction == "encode":
