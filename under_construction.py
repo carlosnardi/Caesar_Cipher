@@ -28,19 +28,19 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 #   print(f"Here's the decoded result: {new_text}")
 
 def caesar(direction, text, shift):
-  new_text = ""
+  output_text = ""
   for letter in text:
     if letter == " ":
       new_text += " "
     else:
       letter = alphabet.index(letter)
       if direction == "encode":
-        chosen_index = letter + shift
+        chosen_position = letter + shift
       else:
-        chosen_index = letter - shift
-      chosen_index %= len(alphabet)
-      new_text += alphabet[chosen_index]
-  print(f"Here's the result: {new_text}")      
+        chosen_position = letter - shift
+      chosen_position %= len(alphabet)
+      output_text += alphabet[chosen_position]
+  print(f"Here's the {direction}d result: {output_text}")      
 
 run_again = "yes"
 while run_again == "yes":
